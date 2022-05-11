@@ -1,6 +1,6 @@
 # CodeWars Challenges: <a target="_blank" href="https://www.codewars.com/users/THREEhundo" >Visit Profile</a> 
 
-![alt tag]()
+![alt tag](![image](https://user-images.githubusercontent.com/35667805/167758233-154d6d15-2988-4ca7-8d16-4a51ee8379dd.png))
 A repository of all of the codewars challenges (kata's) I've completed. Currently Ranked 6 kyu. I push solutions daily.
 
 ## How It's Made:
