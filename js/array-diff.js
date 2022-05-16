@@ -31,6 +31,8 @@ const array_diff = (arr, arr1) => {
 
 console.log(array_diff([3, 4], [3]))
 
+const array_diff_best_practice = (a, b) => a.filter((e) => !b.includes(e))
+
 // find the same numbers
 // iterate through array A
 // check against every item in array b
