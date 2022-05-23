@@ -16,4 +16,10 @@ const sortArray = (array) => {
 	// odd.shift() removes first item of array and returns it!
 	return array.map((x) => (x % 2 ? odd.shift() : x))
 }
+
 console.log(sortArray([5, 8, 6, 3, 4]))
+
+const oddManOut = (arr) => {
+	const odd = arr.filter((x) => x % 2).sort((a, b) => a - b)
+	return arr.map((x) => (x % 2 ? odd.shift() : x))
+}
