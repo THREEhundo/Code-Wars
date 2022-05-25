@@ -18,4 +18,3 @@ function uniqueInOrder(iterable) {
 
 const uniqueInOrderBestPractice = (iterable) =>
 	[...iterable].filter((a, i) => a !== iterable[i])
-console.log(unique1('AAAABBBCCDAABBB'))
