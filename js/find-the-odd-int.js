@@ -10,6 +10,10 @@
  *
  ***/
 
-const findOdd = (a) => a.reduce((a, b) => a ^ b)
+const findOdd = (a) =>
+	a.reduce((a, b) => {
+		console.log(a ^ b)
+		return a ^ b
+	})
 
 console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]))
