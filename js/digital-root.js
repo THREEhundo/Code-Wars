@@ -10,7 +10,7 @@
 // split number if length > 1
 // return sum
 // if length > 1
-// split again
+// split again using recursion
 // return sum
 
 const digital_root = (n) => {
@@ -21,7 +21,13 @@ const digital_root = (n) => {
 			.map((x) => parseInt(x))
 			.reduce((acc, curr) => (acc += curr), 0)
 	let firstNum = num(n)
-	return firstNum > 9 ? num(firstNum) : firstNum
+	return firstNum > 9 ? digital_root(firstNum) : firstNum
 }
 
-console.log(digital_root(456))
+digital_root(11)
+let answer = document.createElement('h1')
+
+let body = document.querySelector('body')
+body.appendChild(answer)
+
+answer.innerHTML = `${digital_root(10)}`
