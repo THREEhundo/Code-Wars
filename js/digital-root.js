@@ -31,3 +31,5 @@ let body = document.querySelector('body')
 body.appendChild(answer)
 
 answer.innerHTML = `${digital_root(10)}`
+
+const digital_root_best_practice = (n) => ((n - 1) % 9) + 1
