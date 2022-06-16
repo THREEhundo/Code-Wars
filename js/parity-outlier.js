@@ -9,5 +9,30 @@
  */
 
 const findOutlier = (integers) => {
-	//
+	// find all odd
+	// find all even
+	// filter even or odd # && there is only one odd/even
+	let even = integers.filter((n) => {
+		if ((n === 0 || n % 2) == 0) {
+			return n
+		} else {
+			return
+		}
+	})
+	even.filter((n) => !integers.includes(n), new Set(integers))
+	let odd = integers.filter((n) => {
+		if (n % 2 == 0) {
+			return n
+		} else {
+			return
+		}
+	})
+	odd.filter((n) => !integers.includes(n), new Set(integers))
+	return even.length === 1 ? even[0] : odd[0]
+}
+
+function findOutlierBP(int) {
+	var even = int.filter((a) => a % 2 == 0)
+	var odd = int.filter((a) => a % 2 !== 0)
+	return even.length == 1 ? even[0] : odd[0]
 }
