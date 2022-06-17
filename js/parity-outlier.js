@@ -36,3 +36,67 @@ function findOutlierBP(int) {
 	var odd = int.filter((a) => a % 2 !== 0)
 	return even.length == 1 ? even[0] : odd[0]
 }
+
+let instances
+const data = [
+	'car',
+	'car',
+	'truck',
+	'truck',
+	'bike',
+	'walk',
+	'car',
+	'van',
+	'bike',
+	'walk',
+	'car',
+	'van',
+	'car',
+	'truck',
+]
+//console.log(instances(data))
+const numbers = [1, 11, 111, 23, 132, 9]
+console.log(numbers.sort((a, b) => a - b))
+console.log(numbers.sort((a, b) => (a < b ? -1 : 1), 0))
+const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
+let rNames = names.reduce((acc, curr) => {
+	!acc[curr] ? (acc[curr] = 1) : acc[curr]++
+	return acc
+}, {})
+console.log(rNames)
+
+let snip = (str) =>
+	str
+		.split(' ')
+		.map((word) => (word.length > 2 ? word.slice(1, word.length - 1) : word))
+		.join(' ')
+let snipSnip = (str) => {
+	let newStr = str.split('')
+	newStr.shift()
+	newStr.pop()
+	return newStr.join('')
+}
+
+const sumObjects = (arr) =>
+	arr.reduce((acc, curr) => {
+		!acc[curr] ? (acc[curr] = 1) : acc[curr]++
+		return acc
+	}, {})
+console.log(sumObjects(data))
+
+const cartTotal = (cartArr) =>
+	cartArr.reduce((total, item) => {
+		!total[item] ? (total[item] = 1) : total[item]++
+		return total
+	}, {})
+console.log(cartTotal(data))
+
+const findOdd = (a) => {
+	let even = a.filter((num) => num % 2 == 0)
+	let odd = a.filter((num) => num % 2 !== 0)
+	console.log(`Even: ${even}, Odd: ${odd}`)
+	return even.length == 1 ? even[0] : odd[0]
+}
+
+let r = [5, 4, 3, 2, 1, 5, 4, 3, 2, 10, 10]
+console.log(findOdd(r))
