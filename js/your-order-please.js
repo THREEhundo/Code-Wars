@@ -14,7 +14,7 @@
 const order = (words) => {
 	// if words == '' return ''
 	let order = []
-	let copy = []
+	let sortedArr = []
 	if (words == '') {
 		return ''
 	}
@@ -25,8 +25,8 @@ const order = (words) => {
 				.split('')
 				.map((letter) => (parseInt(letter) ? order.push(letter) : ''))
 		)
-	words.split(' ').map((word, i) => (copy[order[i] - 1] = word))
-	return copy.join(' ')
+	words.split(' ').map((word, i) => (sortedArr[order[i] - 1] = word))
+	return sortedArr.join(' ')
 	// take the number in each string
 	// how?
 	// map through array -> map array items -> split further -> check for number using parseInt() -> push into array at that position.
