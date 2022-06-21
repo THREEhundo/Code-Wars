@@ -12,11 +12,29 @@
  *
  */
 
+//const findMissingLetter = (arr) => {
+// alphabet arr
+// lowercase arr
+// uppercase arr
+// compare the 2 arrays
+// must start iteration at where arr starts
+// return missing letter
+//}
+
+// make a copy of the alphabet array
+// map -> if arr item == alpha item
+// copy the items from that point until length of arr
+// compare alpha to arr
+// return difference
+
 const findMissingLetter = (arr) => {
-	// alphabet arr
-	// lowercase arr
-	// uppercase arr
-	// compare the 2 arrays
-	// must start iteration at where arr starts
-	// return missing letter
+	// get first character code
+	let i = arr[0].charCodeAt()
+	// map character codes
+	// if the character code doesnt match arr[x]
+	arr.map((x) => (x.charCodeAt() == i ? i++ : i))
+	// return the string of that character code
+	return String.fromCharCode(i)
 }
+
+console.log(findMissingLetter(['a', 'b', 'c', 'd', 'f']))
