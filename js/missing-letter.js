@@ -21,6 +21,12 @@
 // return missing letter
 //}
 
+const missingLetter = (arr) => {
+	let i = arr[0].charCodeAt()
+	arr.map((x) => (x.charCodeAt() == i ? i++ : i))
+	return String.fromCharCode(i)
+}
+
 // make a copy of the alphabet array
 // map -> if arr item == alpha item
 // copy the items from that point until length of arr
