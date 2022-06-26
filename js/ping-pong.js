@@ -28,4 +28,20 @@ const pingPong = (sounds) => {
 	// loser serves next round?
 	// bad sound == last player loses round
 	// if scores are even, the winner is the player who did not hit the final bad shot
+	let soundArr = sounds.split('-')
+	let ping = 0
+	let pong = 0
+	let lastCorrect
+	for (let i = 0; i < soundsArr.length; i++) {
+		if (soundArr[i] === 'ping' && soundArr[i + 1] === 'pong') ping++
+		if (soundArr[i] === 'pong' && soundArr[i + 1] != 'pong')
+			lastCorrect = 'pong'
+		if (soundArr[i] === 'pong' && soundArr[i + 1] === 'ping') pong++
+		if (soundArr[i] === 'pong' && soundArr[i + 1] != 'ping')
+			lastCorrect = 'ping'
+	}
+	if (ping > pong) return 'ping'
+	if (pong > ping) return 'pong'
 }
+
+console.log(pingPong('ping-pong-ping-pong-bonk-bing-doof'))
