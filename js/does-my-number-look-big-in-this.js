@@ -13,13 +13,13 @@
 // split into array
 // iterate through each num using reduce
 // Get power using array length
-const narcissistic = (val) => {
-	let valArr = val.toString().split('')
-	let arrTotal = valArr.reduce(
-		(acc, curr) => (acc += Math.pow(curr, valArr.length)),
-		0
-	)
-	return val === arrTotal
-}
+// ! third argument in array methods is ARRAY!!!
+// ! no need to store array in variable, just use array argument!
+
+const narcissistic = (val) =>
+	val
+		.toString()
+		.split('')
+		.reduce((acc, curr, arr) => (acc += Math.pow(curr, arr.length)), 0) === val
 
 console.log(narcissistic(153))
