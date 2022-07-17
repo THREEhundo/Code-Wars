@@ -35,9 +35,10 @@ const rank = (names, weightArr, n) => {
 	// a == 97 A == 65
 	// z == 122 Z == 90
 	let namesArr = names.toString().split(',')
+	let scoreAndName = []
+
 	let score = namesArr.map((name, index) => {
 		let length = name.length
-
 		let letterScore = name
 			.split('')
 			.map((letter, i) => {
@@ -46,23 +47,41 @@ const rank = (names, weightArr, n) => {
 					? letter.codePointAt(name[i]) - 64
 					: letter.codePointAt(name[i]) - 96
 			})
-			.reduce((acc, curr) => (acc += curr))
-		let place
+			.reduce((acc, curr) => {
+				return (acc += curr)
+			})
 		let sum = name
 			.split('')
 			.map((x) => x)
 			.reduce((acc, curr, i) => {
 				// 64 96
-
 				return curr.codePointAt(curr) >= 65 && curr.codePointAt(curr) <= 90
 					? (acc += curr.codePointAt(curr) - 64)
 					: (acc += curr.codePointAt(curr) - 96)
 			}, 0)
-		return (sum + length) * weightArr[index]
-	})
+		let winningNumber = (sum + length) * weightArr[index]
+		console.log(`
+		Sum: ${sum}
+		Length: ${length}
+		Weight: ${weightArr[index]} 
+		${(sum + length) * weightArr[index]}
+		`)
+		// winning number is not being returned in order
 
-	let sorted = score.sort((a, b) => a - b)
+		return winningNumber
+	})
+	// add namesArr name & winning number to scoreAndName arr as an object
+	// map namesArr -> add corresponding winning number
+	namesArr.map((name, i) => scoreAndName.push({ name, score: score[i] }))
+	//console.log(score, namesArr, scoreAndName)
+
+	let sorted = scoreAndName.sort((a, b) => {
+		// if score is the same list in alphabetical order
+		//if (a === b) console.log(a, b)
+		return b.score - a.score
+	})
 	let smallestNum = sorted[0]
+	console.log(sorted)
 	// find matching score in score array
 	// return name of smallest score
 	let spitName = score.map((name, i) =>
@@ -72,15 +91,12 @@ const rank = (names, weightArr, n) => {
 		? 'Not enough participants'
 		: names.length < 1
 		? 'No participants'
-		: spitName[0]
+		: smallestNum.name
 
 	// if names is empty return 'No participants'
 	// if n > names 'Not enough participants'
 }
 
-console.log(
-	rank(['COLIN,AMANDBA,AMANDAB,CAROL,PauL,JOSEPH'], [1, 4, 4, 5, 2, 1], 4)
-)
 console.log(
 	rank(
 		'Addison,Jayden,Sofia,Michael,Andrew,Lily,Benjamin',
@@ -88,3 +104,18 @@ console.log(
 		4
 	)
 )
+
+const rankBestPractice = (str, weight, n) => {
+	let names = str.split(',')
+	if (!str.length) return 'No participants'
+	if (names.length < n) return 'Not enough participants'
+	return names
+		.map((name, i) => ({
+			name,
+			score:
+				[...name.toLowerCase()].reduce((a, b) => a + b.charCodeAt() - 95, 0) *
+				weight[i],
+		}))
+		.sort((a, (b) => a.name > b.name))
+		.sort((a, (b) => b.s - a.s))[n - 1].name
+}
