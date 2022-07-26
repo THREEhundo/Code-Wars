@@ -26,12 +26,11 @@ const duplicateEncode = (word) => {
 	 * return new string
 	 *
 	 */
-	let copy = word.toLowerCase().split('')
 	return word
 		.toLowerCase()
 		.split('')
 		.map((letter, i, word) => {
-			return copy.some((item, j) => letter === item && i !== j) ? ')' : '('
+			return word.some((item, j) => letter === item && i !== j) ? ')' : '('
 		})
 		.join('')
 }
