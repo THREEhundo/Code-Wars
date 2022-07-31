@@ -35,4 +35,18 @@ const duplicateEncode = (word) => {
 		.join('')
 }
 
-console.log(duplicateEncode('Sammy'))
+const duplicateEncodeBestPractice = (word) =>
+	word
+		.toLowerCase()
+		.split('')
+		.map((letter, i, arr) =>
+			arr.indexOf(letter) == arr.lastIndexOf(letter) ? '(' : ')'
+		)
+		.join('')
+
+//console.log(duplicateEncode('Sammy'))
+console.log(duplicateEncodeBestPractice('Sammy'))
+
+/***
+ * lastIndexOf(item) --> a string method that is given a substring to search for in an entire string and returns the index of the last occurence of the specified string.
+ */
