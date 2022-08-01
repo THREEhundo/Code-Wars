@@ -12,7 +12,8 @@
 
 // create negative infinity variable
 // iterate through reduceRight
-// if current number in array is less than - infinity, replace top
+// if current number in array is less than - infinity, replace top with current number
+// return accumulated number + top number - current number
 
 function getMostProfitFromStockQuotes(quotes) {
 	let top = -Infinity
