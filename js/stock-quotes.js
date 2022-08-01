@@ -1,4 +1,4 @@
-/***
+/*** Get the Most Profits form Stock Quotes 8/1
  * Return the most profit from stock quotes.
  *
  * Stock quotes are stored in an array in order of date.
