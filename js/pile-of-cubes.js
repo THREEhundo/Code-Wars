@@ -26,3 +26,13 @@ function findNb(m) {
 }
 
 console.log(findNb(24723578342962))
+
+/***
+ * get time since midnight
+ * get date
+ * convert hours -> milli
+ * convert min -> milli
+ * convert sec -> milli
+ */
+
+const time = (h, m, s) => (h * 3600 + m * 60 + s) * 1000
