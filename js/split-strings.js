@@ -16,7 +16,8 @@ const solution = (str) => {
 			letters += letter
 			doubles.push(letters)
 		}
-		if (i == arr.length - 1) doubles.push((letters += '_'))
+		if (i == arr.length - 1 && arr.length % 2 == 1)
+			doubles.push((letters += '_'))
 	})
 	return doubles
 }
