@@ -11,10 +11,13 @@
  * You always walk only a single block for each letter (direction) and you know it takes you one minute to traverse one city block, so create a function that will return true if the walk the app gives you will take you exactly ten minutes and will, of course, return you to your starting point.
  ***/
 
-const isValidWalk = (arr) => {
-	if (arr.length !== 10) return false
-	let first = arr.slice(0, 4)
-	let second = arr.slice(5, 9)
-	second.reverse('')
-	return first === second ? true : false
+const isValidWalk = arr => {
+	let dirObj = arr.reduce((allDir, dir) => {
+		allDir[dir] ??= 0
+		allDir[dir]++
+		return allDir
+	}, {})
+	console.log(dirObj)
+	return dirObj.n == dirObj.s && dirObj.e == dirObj.w
 }
+console.log(isValidWalk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's']))
