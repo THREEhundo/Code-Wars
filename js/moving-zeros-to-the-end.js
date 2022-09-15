@@ -17,3 +17,13 @@ const moveZeros = arr => {
 }
 
 console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, 'a']))
+
+// *** Best practices
+const move = arr => {
+	let x = arr.filter(x => x !== 0)
+	let y = arr.filter(y => y === 0)
+
+	return x.concat(y)
+}
+
+console.log(move([0, 2, 2, 0, 2]))
