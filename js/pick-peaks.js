@@ -19,6 +19,10 @@ const pickPeaks = arr => {
  * Next number cannot be greater or last.
  */
 
+const peaks = arr => {
+	const pos = arr.map((x, i) => (i > 0 ? Math.sign(x - arr[i - 1]) * i : 0))
+}
+
 //console.table(pickPeaks([3, 2, 3, 6, 4, 1, 2, 3, 2, 1, 2, 2, 2, 1]))
 
 pickPeaks([3, 2, 3, 6, 4, 1, 2, 3, 2, 1, 2, 2, 2, 1])
