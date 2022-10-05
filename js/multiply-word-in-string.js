@@ -16,7 +16,7 @@ const modifyMultiply = (str, loc, num) => {
 	let focusedArr = []
 
 	for (let i = 0; i < num; i++) {
-		return [...focusedArr, focusedSubstr]
+		focusedArr = [...focusedArr, focusedSubstr]
 	}
 	return focusedArr.join('-')
 }
