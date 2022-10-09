@@ -75,3 +75,43 @@ const decrypt = s => {
 }
 
 console.log(decrypt("PR0-T1P #hqB: 1T'5 N1C3 T0 5AY H3770."))
+
+// Create Parent
+function Parent() {
+	this.name = 'Parent'
+}
+// Greet method
+
+// Create Child
+
+// Create Child prototype
+
+// Create Child constructor
+
+// Call Child
+
+//function Parent() {
+//	this.name = 'Parent'
+//}
+//
+//Parent.prototype.greet = function () {
+//	console.log(`hey this is ${this.name}`)
+//}
+//
+//function Child() {
+//	Parent.call(this)
+//	this.name = 'Child'
+//}
+//
+//Child.prototype = Object.create(Parent.prototype)
+//Child.prototype.constructor = Child
+//Child.prototype.cry = function () {
+//	console.log(`wahh`)
+//}
+//
+//const child = new Child()
+//
+//child.cry()
+//child.greet()
+//console.log(child.constructor)
+//console.log(child.constructor.name)
