@@ -7,15 +7,14 @@
  * If the input is an empty array or is null, return an empty array.
  */
 
-const countPositivesSumNegatives = input => {
-	!input || input.every(x => x == 0)
+const countPositivesSumNegatives = input => !input || input.every(x => x == 0)
 		? []
 		: [
 				input.filter(x => x > 0).length,
 				input.filter(x => x < 0).reduce((a, b) => (a += b)),
 				0
 		  ]
-}
+
 
 console.log(
 	countPositivesSumNegatives([
