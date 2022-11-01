@@ -11,8 +11,8 @@
 
 const stringTransformer = str =>
 	str
-		.trim()
 		.split(' ')
+		.reverse()
 		.map(word =>
 			word
 				.split('')
