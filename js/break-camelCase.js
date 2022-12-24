@@ -4,9 +4,8 @@
  */
 
 const solution = str =>
-	str
-		.split('')
-		.map(x => (x === x.toUpperCase() ? ` ${x}` : x))
+	[...str]
+		.map(char => (char === char.toUpperCase() ? ` ${char}` : char))
 		.join('')
 
 // split
