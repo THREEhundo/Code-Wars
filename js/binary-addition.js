@@ -8,8 +8,9 @@
  */
 
 const addBinary = (a, b) => {
-  let binary = ''
-  let decimal = a + b
+  let binary = '', 
+  decimal = a + b
+  
   while (decimal > 0) {
 	binary = (decimal % 2) + binary
 	decimal = Math.floor(decimal / 2)
