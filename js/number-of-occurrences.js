@@ -13,3 +13,9 @@ Object.defineProperty(Array.prototype, 'numberOfOccurrences', {
 		return occurrences
 	}
 })
+
+// Best Practice
+
+Array.prototype.numberOfOccurrences = function (amount) {
+	return this.filter(x => x === amount).length
+}
