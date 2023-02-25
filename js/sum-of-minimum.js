@@ -12,7 +12,7 @@
  */
 
 const sumOfMinimums = arr =>
-	arr.map(x => Math.min(...x)).reduce((acc, curr) => (acc += curr), 0)
+	arr.reduce((acc, curr) => acc + Math.min(...curr), 0)
 
 console.log(
 	sumOfMinimums([
