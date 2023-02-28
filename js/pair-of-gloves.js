@@ -29,6 +29,21 @@ const numberOfPairs = gloves => {
 	return pairs
 }
 
-console.log(
-	numberOfPairs(['red', 'red', 'red', 'red', 'red', 'red', 'blue', 'blue'])
-)
+const pairs = gloves => {
+	let pairs = 0,
+		sortedGloves = gloves.reduce((acc, curr) => {
+			const currentGlove = acc[curr] ?? 0
+			return {
+				...acc,
+				[curr]: currentGlove + 1
+			}
+		}, {})
+
+	for (const glove in sortedGloves) {
+		pairs += Math.floor(sortedGloves[glove] / 2)
+	}
+
+	return pairs
+}
+
+console.log(pairs(['red', 'red', 'red', 'red', 'red', 'red', 'blue', 'blue']))
