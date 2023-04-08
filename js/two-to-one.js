@@ -13,4 +13,6 @@ const longest = (s1, s2) => {
 	return sorted
 }
 
+const bestPractice = (s1, s2) => [...new Set(s1 + s2)].sort().join('')
+
 console.log(longest('aretheyhere', 'yestheyarehere'))
