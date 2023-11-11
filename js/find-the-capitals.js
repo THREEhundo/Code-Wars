@@ -18,4 +18,16 @@ const capitals = word => {
 	return capArr
 }
 
+const capitalRefactored = word =>
+	word
+		.split('')
+		.reduce(
+			(allChar, char, i) =>
+				word.charCodeAt(i) >= 65 && word.charCodeAt(i) <= 90
+					? [...allChar, i]
+					: allChar,
+			[]
+		)
+
 console.log(capitals('CodEWaRs'), [0, 3, 4, 6])
+console.log(capitalRefactored('CodEWaRs'), [0, 3, 4, 6])
