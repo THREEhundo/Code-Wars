@@ -8,13 +8,6 @@
  */
 
 const splitInteger = (num, parts) => {
-	/**
-	 * get remainder
-	 * get whole number of number divided evenly into parts
-	 * combine 2 arrays
-	 * first is a new array consisting parts - remainder and fill with int
-	 */
-
 	const remainder = num % parts
 	const base = Math.floor(num / parts)
 
@@ -25,3 +18,13 @@ const splitInteger = (num, parts) => {
 }
 
 console.log(splitInteger(20, 6))
+
+const split = (num, parts) => {
+	const remainder = num % parts
+	const base = Math.floor(num / parts)
+
+	return [
+		...new Array(parts - remainder).fill(base),
+		...new Array(remainder).fill(base + 1)
+	]
+}
