@@ -23,6 +23,4 @@ const phrases = [
 	'not at all'
 ]
 
-function howMuchILoveYou(n) {
-	return phrases[(n - 1) % phrases.length]
-}
+const howMuchILoveYou = n => phrases[(n - 1) % phrases.length]
