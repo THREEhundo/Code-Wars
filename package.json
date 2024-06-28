@@ -1,0 +1,12 @@
+{
+  "name": "code-wars",
+  "version": "1.0.0",
+  "description": "![image](https://user-images.githubusercontent.com/35667805/167758233-154d6d15-2988-4ca7-8d16-4a51ee8379dd.png)\r A repository of all of the codewars challenges (kata's) I've completed. Currently Ranked 6 kyu. I push solutions daily.",
+  "main": "index.js",
+  "scripts": {
+    "kata": "node ./js/run.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

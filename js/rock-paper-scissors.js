@@ -27,6 +27,7 @@ const rps = (p1, p2) =>
 		: 'Draw!'
 
 const rpsBest = (p1, p2) => {
+	// Each combo is a win condition for player 1
 	let rules = {
 		'rock': 'scissors',
 		'paper': 'rock',
@@ -38,6 +39,3 @@ const rpsBest = (p1, p2) => {
 		? 'Player 1 won!'
 		: 'Player 2 won!'
 }
-
-let p1 = 'rock'
-let p2 = 'scissors'
