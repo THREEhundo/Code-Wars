@@ -28,25 +28,3 @@ console.log(sumNoDuplicates([1, 10, 3, 10, 10])) // Should output 4 (1 + 3)
 console.log(sumNoDuplicates([1, 2, 3])) // Should output 6 (1 + 2 + 3)
 console.log(sumNoDuplicates([1, 1, 1, 1])) // Should output 0
 console.log(sumNoDuplicates([5, 17, 18, 11, 13, 18, 11, 13])) // Should output 22 (5 + 17)
-//
-//function sumNonRepeated(numbers) {
-//	// Object to count occurrences of each number
-//	const count = {}
-//
-//	// First pass: Count occurrences
-//	for (const num of numbers) {
-//		count[num] = (count[num] || 0) + 1
-//	}
-//
-//	// Second pass: Sum numbers that appear only once
-//	let sum = 0
-//	for (const num of numbers) {
-//		if (count[num] === 1) {
-//			sum += num
-//		}
-//	}
-//
-//	return sum
-//}
-
-// Test cases
